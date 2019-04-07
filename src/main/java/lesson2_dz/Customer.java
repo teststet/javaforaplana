@@ -1,6 +1,6 @@
 package lesson2_dz;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private int id;
     private String family;
     private String first_name;
@@ -56,6 +56,11 @@ public class Customer {
     public void print_sort_card(long p1, long p2) {
         if(getNum_card() > p1 && getNum_card() < p2)
             print_customer();
+    }
+
+    @Override
+    public int compareTo(Customer o) {
+        return this.family.compareTo(o.family);
     }
 
 }
