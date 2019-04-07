@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Main {
+public class Main_Student {
     public static void main(String[] args) throws ParseException {
 //        System.out.println(rand_kur());
         Student[] ngtu = new Student[10];

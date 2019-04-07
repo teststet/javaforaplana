@@ -29,6 +29,9 @@ public class Student {
         this.gruppa = gruppa;
     }
 
+    public Student(int i, String rand_fam, String rand_firstName, String rand_secondName, String rand_adr, long rand_card, long rand_bank) {
+    }
+
     public void setId() {
         this.id = id;
     }
