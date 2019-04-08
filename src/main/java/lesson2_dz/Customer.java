@@ -54,7 +54,7 @@ public class Customer implements Comparable<Customer> {
 
     //Вывод данных
     public void print_customer () {
-        System.out.println(getId() + " " + getFamily() + " "+ getFirst_name() + " " + getSecond_name() + " " + getAdress() + " " + getNum_card() + " " + getNum_bank());
+        System.out.println(getId() + "\t" + getFamily() + "\t"+ getFirst_name() + "\t" + getSecond_name() + "\t" + getAdress() + "\t" + getNum_card() + "\t" + getNum_bank());
     }
 
     //Выводим данные, если они входят в заданный интервал
