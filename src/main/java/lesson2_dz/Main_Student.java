@@ -7,11 +7,15 @@ import java.util.*;
 public class Main_Student {
     public static void main(String[] args) throws ParseException {
 //        System.out.println(rand_kur());
+        //Создаенм масив объектов
         Student[] ngtu = new Student[10];
+
+        //Забиваем каждый объект рандомными данными
         for(int i = 0; i < ngtu.length; i++){
             ngtu[i] = new Student(i,rand_fam(),rand_firstName(),rand_secondName(),rand_date(),rand_adr(),rand_tel(),rand_fac(),rand_kur(),rand_group());
         }
 
+        //Выводим созданный массив объектов
         System.out.println("========================================================");
         System.out.println("Все студенты");
         System.out.println("========================================================");
@@ -48,6 +52,7 @@ public class Main_Student {
 
 
     }
+    //Методы по забиванию рандомными данными
     public static String rand_fam () {
         Random r = new Random();
         String[] name = {"Иванов", "Петров", "Подольск", "Лопатин", "Крапивин", "Четвертаков", "Касперский", "Грин", "Белов"};

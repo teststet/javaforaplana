@@ -76,6 +76,7 @@ public class Student {
         return gruppa;
     }
 
+    //Вывод информации о студенте на экран
     public void print_student() {
         System.out.println("id: " + getId());
         System.out.println("Фамилия: " + getFamily());
@@ -89,19 +90,19 @@ public class Student {
         System.out.println("Группа: " + getGruppa());
         System.out.println("--------------------------------------------------------------");
     }
-
+    //Вывод на экран студентов заданого Факультетта и курса
     public void print_FakAndKurs(String s, int i) {
         if ((this.getFacultate().equals(s)) && (this.getKurs() == i))
             print_student();
     }
-
+    //Вывод на экран студентов родифшихся после заданого года
     public void print_dr(int year2) {
         LocalDate localDate = this.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         int year1 = localDate.getYear();
         if (year1 > year2)
             print_student();
     }
-
+    //Вывод на экран студена, если он относиться к заданой группе
     public void print_grup(String s) {
         if (s.equals(this.getGruppa())){
             print_student();
