@@ -47,6 +47,11 @@ public class Customer implements Comparable<Customer> {
         return num_bank;
     }
 
+    //Возращает полное ФИО
+    public String getFullname() {
+        return getFamily() + " " + getFirst_name() + " " + getSecond_name();
+    }
+
     //Вывод данных
     public void print_customer () {
         System.out.println(getId() + " " + getFamily() + " "+ getFirst_name() + " " + getSecond_name() + " " + getAdress() + " " + getNum_card() + " " + getNum_bank());
@@ -58,9 +63,10 @@ public class Customer implements Comparable<Customer> {
             print_customer();
     }
 
+    //Интерфейс для сравнения двух строк
     @Override
     public int compareTo(Customer o) {
-        return this.family.compareTo(o.family);
+        return getFullname().compareTo(o.getFullname());
     }
 
 }

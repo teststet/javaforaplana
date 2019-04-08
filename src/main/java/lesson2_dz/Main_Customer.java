@@ -18,12 +18,14 @@ public class Main_Customer {
             shop[i].print_customer();
         }
 
+        //Вывод клиентов попавших в  заданном интервале
+        System.out.println("\nВывод клиентов попавших в  заданном интервале:");
         for(int i = 0; i < shop.length; i++){
             shop[i].print_sort_card(4321128100000000L,4321562300009999L);
         }
 
-
-        System.out.println("\nSorted:");
+        //Сортировака массива объектов по ФИО и вывод клиентов в алфавитном порядке
+        System.out.println("\nВывод клиентов в алфавитном порядке:");
         Arrays.sort(shop);
         {
             for (int i = 0; i < shop.length; i++) {
