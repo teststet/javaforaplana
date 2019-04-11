@@ -1,20 +1,16 @@
 package lesson2_dz;
 
-import java.util.Random;
-
-//Подключаем класс студент, что использовать методы рандомизации
-import static lesson2_dz.Main_Student.*;
+import java.text.ParseException;
 
 public class Main_Patient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         //Создаенм масив объектов
         Patient[] med = new Patient[5];
 
         //Забиваем каждый объект рандомными данными
         for(int i = 0; i < med.length; i++){
-            med[i] = new Patient(i,rand_fam(),rand_firstName(),rand_secondName(),rand_adr(), rand_tel(), rand_medcard(),rand_diagnoz());
+            med[i] = new Patient();
         }
-
         //Выводим созданный массив объектов
         for(int i = 0; i < med.length; i++)
             med[i].print_patient();
@@ -39,16 +35,5 @@ public class Main_Patient {
             med[i].print_pomedcard(2000,6000);
     }
 
-    public static int rand_medcard() {
-        Random r = new Random();
-        int n = r.nextInt(9000) + 1000;
-        return n;
-    }
 
-    public static String rand_diagnoz() {
-        Random r = new Random();
-        String[] name = {"Волчанка", "ОРВИ", "Перелом", "Ушиб"};
-        int n = r.nextInt(4);
-        return name[n];
-    }
 }

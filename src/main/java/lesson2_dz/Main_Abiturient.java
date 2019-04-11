@@ -1,17 +1,14 @@
 package lesson2_dz;
 
-//Подключаем класс студент, что использовать методы рандомизации
-import java.util.Random;
-
-import static lesson2_dz.Main_Student.*;
+import java.text.ParseException;
 
 public class Main_Abiturient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         Abiturient[] ab = new Abiturient[10];
 
         for(int i = 0; i < ab.length; i++ )
-            ab[i] = new Abiturient(i, rand_fam(),rand_firstName(),rand_secondName(),rand_adr(), rand_tel(), rand_retings());
+            ab[i] = new Abiturient();
 
         for(int i = 0; i < ab.length; i++ )
             ab[i].print_abiturient();
@@ -52,11 +49,5 @@ public class Main_Abiturient {
 
     }
 
-    public static int[] rand_retings() {
-        Random r = new Random();
-        int[] n = new int[3];
-        for(int i = 0; i < n.length; i++)
-            n[i] = r.nextInt(5) + 1;
-        return n;
-    }
+
 }

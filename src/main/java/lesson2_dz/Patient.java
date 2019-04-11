@@ -1,48 +1,30 @@
 package lesson2_dz;
 
-public class Patient {
-    private int id;
-    private String family;
-    private String first_name;
-    private String second_name;
-    private String adress;
-    private int phone;
+import java.text.ParseException;
+import java.util.Random;
+
+public class Patient extends Human{
+
     private int num_medcard;
     private String diagnoz;
 
-    public Patient(int id, String family, String first_name, String second_name, String adress, int phone, int num_medcard, String diagnoz) {
-        this.id = id;
-        this.family = family;
-        this.first_name = first_name;
-        this.second_name = second_name;
-        this.adress = adress;
-        this.phone = phone;
-        this.num_medcard = num_medcard;
-        this.diagnoz = diagnoz;
+    public Patient() throws ParseException {
+        super();
+        this.num_medcard = rand_medcard();
+        this.diagnoz = rand_diagnoz();
     }
 
-    public int getId() {
-        return id;
+        public static int rand_medcard() {
+        Random r = new Random();
+        int n = r.nextInt(9000) + 1000;
+        return n;
     }
 
-    public String getFamily() {
-        return family;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public String getSecond_name() {
-        return second_name;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public int getPhone() {
-        return phone;
+    public static String rand_diagnoz() {
+        Random r = new Random();
+        String[] name = {"Волчанка", "ОРВИ", "Перелом", "Ушиб"};
+        int n = r.nextInt(4);
+        return name[n];
     }
 
     public int getNum_medcard() {

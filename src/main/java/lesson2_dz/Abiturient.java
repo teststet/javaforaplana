@@ -1,46 +1,23 @@
 package lesson2_dz;
 
-public class Abiturient {
-    private int id;
-    private String family;
-    private String first_name;
-    private String second_name;
-    private String adress;
-    private int phone;
+import java.text.ParseException;
+import java.util.Random;
+
+public class Abiturient extends Human{
+
     private int [] ratings;
 
-    public Abiturient (int id, String family,  String first_name, String second_name, String adress, int phone, int [] ratings) {
-        this.id = id;
-        this.family = family;
-        this.first_name = first_name;
-        this.second_name = second_name;
-        this.adress = adress;
-        this.phone = phone;
-        this. ratings = ratings;
+    public Abiturient () throws ParseException {
+        super();
+        this. ratings = rand_retings();
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public String getSecond_name() {
-        return second_name;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public int getPhone() {
-        return phone;
+    public static int[] rand_retings() {
+        Random r = new Random();
+        int[] n = new int[3];
+        for(int i = 0; i < n.length; i++)
+            n[i] = r.nextInt(5) + 1;
+        return n;
     }
 
     public int[] getRatings() {

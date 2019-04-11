@@ -1,17 +1,14 @@
 package lesson2_dz;
 
+import java.text.ParseException;
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
-
-//Подключаем класс студент, что использовать методы рандомизации
-import static lesson2_dz.Main_Student.*;
 
 public class Main_Customer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Customer[] shop = new Customer[20];
 
         for(int i = 0; i < shop.length; i++){
-            shop[i] = new Customer(i,rand_fam(),rand_firstName(),rand_secondName(),rand_adr(), rand_card(), rand_bank());
+            shop[i] = new Customer();
         }
 
         for(int i = 0; i < shop.length; i++){
@@ -34,14 +31,5 @@ public class Main_Customer {
         }
 
     }
-    //Метод, который позволяет получить рандомную переменную лонг в нужном диапозоне
-    public static long rand_card() {
-        long n = ThreadLocalRandom.current().nextLong(4321000000000000L,4321999999999999L);
-        return n;
-    }
 
-    public static long rand_bank() {
-        long n = ThreadLocalRandom.current().nextLong(1234000000000000L,1234999999999999L);
-        return n;
-    }
 }

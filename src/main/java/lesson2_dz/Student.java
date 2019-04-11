@@ -1,67 +1,20 @@
 package lesson2_dz;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date;
+import java.util.Random;
 
-public class Student {
-    private int id;
-    private String family;
-    private String first_name;
-    private String second_name;
-    private Date date;
-    private String adress;
-    private int phone;
+public class Student extends Human{
     private String facultate;
     private int kurs;
     private String gruppa;
 
-    public Student(int id, String family, String first_name, String second_name, Date date, String adress, int phone, String facultate, int kurs, String gruppa) {
-        this.id = id;
-        this.family = family;
-        this.first_name = first_name;
-        this.second_name = second_name;
-        this.date = date;
-        this.adress = adress;
-        this.phone = phone;
-        this.facultate = facultate;
-        this.kurs = kurs;
-        this.gruppa = gruppa;
-    }
-
-    public Student(int i, String rand_fam, String rand_firstName, String rand_secondName, String rand_adr, long rand_card, long rand_bank) {
-    }
-
-    public void setId() {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public String getSecond_name() {
-        return second_name;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public int getPhone() {
-        return phone;
+    public Student() throws ParseException {
+        super();
+        this.facultate = rand_fac();
+        this.kurs = rand_kur();
+        this.gruppa = rand_group();
     }
 
     public String getFacultate() {
@@ -75,6 +28,27 @@ public class Student {
     public String getGruppa() {
         return gruppa;
     }
+
+    public static String rand_fac() {
+        Random r = new Random();
+        String[] name = {"Экономический", "ИРИТ", "Физико-Математический"};
+        int n = r.nextInt(3);
+        return name[n];
+    }
+
+    public static int rand_kur() {
+        Random r = new Random();
+        int n = r.nextInt(5) + 1;
+        return n;
+    }
+
+    public static String rand_group() {
+        Random r = new Random();
+        String[] name = {"11-ИВТ-1", "12-Эк", "14-К-2", "14-ФК-3"};
+        int n = r.nextInt(4);
+        return name[n];
+    }
+
 
     //Вывод информации о студенте на экран
     public void print_student() {
