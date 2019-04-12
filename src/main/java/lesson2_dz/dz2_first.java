@@ -102,20 +102,29 @@ public class dz2_first {
         return arr;
     }
     //(6)	Все трехзначные числа, в десятичной записи которых нет одинаковых цифр.
-    public static void tripNum (int[] arr) {
+    public static void tripNum (int[] arr, int b) {
         String s;
         for (int i = 0; i < arr.length; i++) {
+            if ()
             s = Integer.toString(arr[i]);
-            if (s.charAt(0) != '-') {
-                if (s.length() == 3) {
-                    if (!(s.charAt(0) == s.charAt(1) || s.charAt(0) == s.charAt(2) || s.charAt(1) == s.charAt(2)))
+            for(int j = 0; j < s.length() - 1; j++) {
+                if (s.charAt(j) != '-')
+                    continue;
+                for(int n = j+1; n < b + 1; n++) {
+                    if (!(s.charAt(j) == s.charAt(n))) {
                         System.out.println(s);
                 }
-            } else {
-                if (s.length() == 4) {
-                    if (!(s.charAt(1) == s.charAt(2) || s.charAt(1) == s.charAt(3) || s.charAt(2) == s.charAt(3)))
-                        System.out.println(s);
-                }
+            }
+//            if (s.charAt(0) != '-') {
+//                if (s.length() == 3) {
+//                    if (!(s.charAt(0) == s.charAt(1) || s.charAt(0) == s.charAt(2) || s.charAt(1) == s.charAt(2)))
+//                        System.out.println(s);
+//                }
+//            } else {
+//                if (s.length() == 4) {
+//                    if (!(s.charAt(1) == s.charAt(2) || s.charAt(1) == s.charAt(3) || s.charAt(2) == s.charAt(3)))
+//                        System.out.println(s);
+//                }
 
             }
         }
@@ -217,20 +226,8 @@ public class dz2_first {
     }
     //(14)	. Элементы, которые равны полусумме соседних элементов.
     public static void polSumSosed (int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            //Если эемент массива первый
-            if (i == 0) {
-                if (arr[i] == ((arr[i + 1] + arr[arr.length - 1]) / 2))
-                    System.out.println(arr[i]);
-            }
-             //Если элемент массива последний
-            else if (i == (arr.length - 1)) {
-                if (arr[i] == ((arr[i - 1] + arr[0]) / 2))
-                    System.out.println(arr[i]);
-            }
-            //Условие для остальных элементов массива
-            else {
-                if (arr[i] == ((arr[i - 1] + arr[i + 1]) / 2))
+        for (int i = 1; i < arr.length - 1; i++) {
+                if (arr[i] == ((arr[i - 1] + arr[arr.length + 1]) / 2))
                     System.out.println(arr[i]);
             }
         }
