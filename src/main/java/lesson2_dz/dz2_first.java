@@ -13,13 +13,13 @@ public class dz2_first {
     //div5and7(getRandomNumbers(1000));
     //formaAndTik("ываыва вкуемсчсм информатика ывываыфв");
     //modSort(getRandomNumbers(10));
-    //SimpleCh(getRandomNumbers(20));
-    //sortUpOrDown(getRandomNumbers(20), 1);
+    SimpleCh(getRandomNumbers(100));
+    //sortUpOrDown(getRandomNumbers(20), 2);
     //sortDownCh(getRandomNumbers(20));
-    //tripNum(getRandomNumbers(20));
-    //int[] kolp = {21, 37,  54};
+    //tripNum(getRandomNumbers(100), 3);
+   //int[] kolp = {21, 37,  54, 1, 11211, 1221, 22, 9999999, 99999999};
     //palindromCh(kolp);
-    polSumSosed(getRandomNumbers(1000));
+    //polSumSosed(getRandomNumbers(1000));
     }
 
     public static int[] getRandomNumbers(int count) {
@@ -28,7 +28,7 @@ public class dz2_first {
         Random r = new Random();
 
         for (int i = 0; i < count; i++) {
-            res[i] = r.nextInt(200) - 100;
+            res[i] = r.nextInt(100);
             System.out.println(res[i]);
         }
         System.out.println("-------------------------");
@@ -104,29 +104,37 @@ public class dz2_first {
     //(6)	Все трехзначные числа, в десятичной записи которых нет одинаковых цифр.
     public static void tripNum (int[] arr, int b) {
         String s;
+        int m;
         for (int i = 0; i < arr.length; i++) {
-            if ()
+            //Узнаем количество цифр в числе
+            int num = (int) Math.log10(abs(arr[i])) + 1;
+            //System.out.println("Num =" + num);
+            //Если количество цифр не совпадает, то переходим к следующиму числу
+            if (b != num)
+                continue;
+            //Присваиваем переменным значение перед проверкой
             s = Integer.toString(arr[i]);
+            m = b;
+            boolean pravda = true;
+            //По символьная проверка числа
             for(int j = 0; j < s.length() - 1; j++) {
-                if (s.charAt(j) != '-')
+                //Если первый символ минус, то проверям на символ больше
+                if (s.charAt(j) == '-') {
+                    m++;
+                    //System.out.println(m);
                     continue;
-                for(int n = j+1; n < b + 1; n++) {
-                    if (!(s.charAt(j) == s.charAt(n))) {
-                        System.out.println(s);
+                }
+                //Последовательно проверям каждый символ
+                for(int n = j+1; n < m ; n++) {
+                    if ((s.charAt(j) == s.charAt(n))) {
+                        pravda = false;
+                        break;
+                    }
                 }
             }
-//            if (s.charAt(0) != '-') {
-//                if (s.length() == 3) {
-//                    if (!(s.charAt(0) == s.charAt(1) || s.charAt(0) == s.charAt(2) || s.charAt(1) == s.charAt(2)))
-//                        System.out.println(s);
-//                }
-//            } else {
-//                if (s.length() == 4) {
-//                    if (!(s.charAt(1) == s.charAt(2) || s.charAt(1) == s.charAt(3) || s.charAt(2) == s.charAt(3)))
-//                        System.out.println(s);
-//                }
-
-            }
+            //Если нет одинаковых цифр, то печатаем
+            if(pravda)
+                System.out.println(s);
         }
     }
 
@@ -140,7 +148,7 @@ public class dz2_first {
             pravda = true;
             if(arr[i] < 2)
                 continue;
-            for(int d=2; d*d < arr[i]; d++) {
+            for(int d=2; d*d <= arr[i]; d++) {
                 if((arr[i] % d) == 0)
                     pravda = false;
             }
@@ -148,13 +156,10 @@ public class dz2_first {
         }
     }
     //(9)	Отсортированные числа в порядке возрастания и убывания.
-    public static int[] sortUpOrDown (int[] mas, int t) {
-        int[] arr = mas;
-        switch (t) {
-            case 1:
+    public static int[] sortUpOrDown (int[] arr, int t) {
                 for(int i = arr.length-1 ; i > 0 ; i--) {
                     for(int j = 0 ; j < i ; j++) {
-                        if( arr[j] > arr[j+1]){
+                        if(( t == 1 && arr[j] > arr[j+1]) || ( t == 2 && arr[j] < arr[j+1])){
                             int tmp = arr[j];
                             arr[j] = arr[j+1];
                             arr[j+1] = tmp;
@@ -164,21 +169,6 @@ public class dz2_first {
                 for(int i = 0; i < arr.length; i++ ) {
                 System.out.println(arr[i]);
                 }
-            break;
-            case 2:
-                for(int i = arr.length-1 ; i > 0 ; i--) {
-                    for(int j = 0 ; j < i ; j++) {
-                        if( arr[j] < arr[j+1]){
-                            int tmp = arr[j];
-                            arr[j] = arr[j+1];
-                            arr[j+1] = tmp;
-                        }
-                    }
-                }
-                for(int i = 0; i < arr.length; i++ ) {
-                    System.out.println(arr[i]);
-                }
-        }
         return arr;
     }
     //(10)	 Числа в порядке убывания частоты встречаемости чисел.
@@ -216,9 +206,11 @@ public class dz2_first {
         String second;
         for(int i = 0; i < arr.length; i++){
             s = Integer.toString(arr[i]);
-            if (s.charAt(0) != '-' && s.length() % 2 != 0) {
+            int begin;
+            if (s.charAt(0) != '-' ) {
                 first = s.substring(0,s.length()/2);
-                second = new StringBuffer(s.substring(s.length()/2 + 1, s.length())).reverse().toString();
+                begin = s.length() % 2 != 0 ? s.length()/2 + 1 : s.length()/2;
+                second = new StringBuffer(s.substring(begin, s.length())).reverse().toString();
                 if(first.equals(second))
                     System.out.println(arr[i]);
             }
@@ -231,7 +223,6 @@ public class dz2_first {
                     System.out.println(arr[i]);
             }
         }
-    }
     //(15)	. Период десятичной дроби p = m/n для первых двух целых положительных чисел n и m, расположенных подряд.
     //(16)	Построить треугольник Паскаля для первого положительного числа
 
