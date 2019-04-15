@@ -40,15 +40,18 @@ public class Abiturient extends Human{
 
     public void print_sum (int sum) {
         if(this.getSum() > sum)
-            print_abiturient();
+            this.print_abiturient();
 
     }
 
     public void print_neud () {
         for(int i = 0; i < this.getRatings().length; i++) {
             if(this.getRatings()[i] < 3)
-                print_abiturient();
+                this.print_abiturient();
         }
     }
-
+    public void print_halfSum () {
+        if(this.getSum() == ((5*this.getRatings().length) / 2))
+            this.print_abiturient();
+    }
 }
