@@ -1,5 +1,8 @@
 package lesson3_dz;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Triangle {
 
     int a_side;
@@ -56,8 +59,10 @@ public class Triangle {
     }
 
     public double square () {
-        int p = perimeter() / 2;
-        return Math.sqrt(p * (p - this.a_side) * (p - this.b_side) * (p - this.c_side));
+        double p = perimeter() / 2;
+        //System.out.println(p);
+        double s = Math.sqrt(p * (p - a_side) * (p - b_side) * (p - c_side));
+        return new BigDecimal(s).setScale(3, RoundingMode.UP).doubleValue();
     }
 
     public boolean true_triangle() {
