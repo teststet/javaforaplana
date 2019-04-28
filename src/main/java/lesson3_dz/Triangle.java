@@ -69,4 +69,19 @@ public class Triangle {
         return ((getA_side() + getB_side()) > getC_side()) && ((getA_side() + getC_side()) > getB_side())
                 && ((getB_side() + getC_side()) > getA_side());
     }
+
+    public String type_triangle() {
+        String type;
+        if (getA_side() == getB_side() && getB_side() == getC_side() && getA_side() == getC_side())
+            type = "равносторонний"; //equilateral
+        else if (getA_side() == getB_side() || getB_side() == getC_side() || getA_side() == getC_side())
+            type = "равнобедренный"; //isosceles
+        else if((Math.sqrt(Math.pow(getA_side(), 2) + Math.pow(getB_side(), 2) )) == getC_side()
+                || (Math.sqrt(Math.pow(getB_side(), 2) + Math.pow(getC_side(), 2) )) == getA_side()
+                || (Math.sqrt(Math.pow(getA_side(), 2) + Math.pow(getC_side(), 2) )) == getB_side())
+            type = "прямоугольный"; //rectangular
+        else type = "произвольный"; //arbitrary
+        return type;
+    }
+
 }
