@@ -13,13 +13,15 @@ public class dz2_first {
     //div5and7(getRandomNumbers(1000));
     //formaAndTik("ываыва вкуемсчсм информатика ывываыфв");
     //modSort(getRandomNumbers(10));
-    SimpleCh(getRandomNumbers(100));
+    //SimpleCh(getRandomNumbers(100));
     //sortUpOrDown(getRandomNumbers(20), 2);
     //sortDownCh(getRandomNumbers(20));
     //tripNum(getRandomNumbers(100), 3);
    //int[] kolp = {21, 37,  54, 1, 11211, 1221, 22, 9999999, 99999999};
     //palindromCh(kolp);
     //polSumSosed(getRandomNumbers(1000));
+
+    period_tenFanction(getRandomNumbers(10));
     }
 
     public static int[] getRandomNumbers(int count) {
@@ -28,7 +30,7 @@ public class dz2_first {
         Random r = new Random();
 
         for (int i = 0; i < count; i++) {
-            res[i] = r.nextInt(100);
+            res[i] = r.nextInt(300) - 200;
             System.out.println(res[i]);
         }
         System.out.println("-------------------------");
@@ -224,6 +226,27 @@ public class dz2_first {
             }
         }
     //(15)	. Период десятичной дроби p = m/n для первых двух целых положительных чисел n и m, расположенных подряд.
+    public  static void period_tenFanction (int [] arr) {
+        double m;
+        double n;
+        double p;
+        String strM;
+        String strN;
+        for (int i = 1; i < arr.length; i++) {
+            strM = Integer.toString(arr[i-1]);
+            strN = Integer.toString(arr[i]);
+            System.out.println(strM);
+            System.out.println(strN);
+            if(strM.charAt(0) == '-' || strN.charAt(0) == '-')
+                continue;
+
+            m = (double) arr[i-1];
+            n = (double) arr[i];
+            p = m / n;
+            System.out.println(p);
+            break;
+        }
+    }
     //(16)	Построить треугольник Паскаля для первого положительного числа
 
 
