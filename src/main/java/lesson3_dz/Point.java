@@ -145,7 +145,4 @@ public class Point  {
     public double distance_between_two_points (Point p) {
         return round_double(Math.sqrt(Math.pow(p.getX() - this.getX(), 2) + Math.pow(p.getY() - this.getY(), 2)));
     }
-
-
-
 }
