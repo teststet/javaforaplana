@@ -9,8 +9,8 @@ public class Main {
         String text = b.getFileText();
         System.out.println(text);
 
-        b.setFileText(text + "\n12");
-        b.setFileText(text + "\n13");
-        b.setFileText(text + "\n14");
+        //MyReader
+
+
     }
 }

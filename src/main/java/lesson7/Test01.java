@@ -8,6 +8,8 @@ public class Test01 {
 
 
     public static void main(String[] args) {
+        MyReader outputfile = new MyReader("E:\\test01Java\\src\\main\\java\\lesson7\\Text.txt");
+        MyReader inputfile = new MyReader("E:\\test01Java\\src\\main\\java\\lesson7\\Text1.txt");
     //avg(17,17);
     //trans(14);
 
@@ -25,8 +27,8 @@ public class Test01 {
 
     //System.out.println(lenClub("Динамо"));
     //formaAndTik("Информатика");
-    //findFirstAndLast("Сколько букв е в слове неестественнее");
-    findNN("Клмнн одинн");
+        inputfile.setFileText(findFirstAndLast(outputfile.getFileText()));
+    //findNN("Клмнн одинн");
     }
 
     //Задача 0
@@ -205,12 +207,13 @@ public class Test01 {
         }
     }
     //Задача 15
-    public static void findFirstAndLast (String s) {
+    public static String findFirstAndLast (String s) {
         int first = s.indexOf("е") + 1 ;
         int last = s.lastIndexOf("е") + 1;
         System.out.println(s);
         System.out.println("Порядковый номер первой буквы е равен " + first);
         System.out.println("Порядковый номер последней  буквы е равен " + last);
+        return "Порядковый номер первой буквы е равен " + first + "\nПорядковый номер последней  буквы е равен " + last;
     }
 
 }
