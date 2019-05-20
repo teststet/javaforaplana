@@ -1,6 +1,5 @@
 package lesson2_dz;
 
-import java.text.ParseException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Customer extends Human implements Comparable<Customer>{
@@ -8,10 +7,15 @@ public class Customer extends Human implements Comparable<Customer>{
     private long num_card;
     private long num_bank;
 
-    public Customer() throws ParseException {
+    public Customer() {
         super();
         this.num_card = rand_card();
         this.num_bank = rand_bank();
+    }
+
+    @Override
+    public void i_am() {
+        System.out.println("I am Customer");
     }
 
 

@@ -1,9 +1,7 @@
 package lesson2_dz;
 
-import java.text.ParseException;
-
 public class Main_Patient {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         //Создаенм масив объектов
         Patient[] med = new Patient[5];
 

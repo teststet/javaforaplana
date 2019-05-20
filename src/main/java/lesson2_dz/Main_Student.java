@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main_Student {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
 //        System.out.println(rand_kur());
         //Создаенм масив объектов
         Student[] ngtu = new Student[10];

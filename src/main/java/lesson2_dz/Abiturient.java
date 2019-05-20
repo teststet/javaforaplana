@@ -1,15 +1,19 @@
 package lesson2_dz;
 
-import java.text.ParseException;
 import java.util.Random;
 
 public class Abiturient extends Human{
 
     private int [] ratings;
 
-    public Abiturient () throws ParseException {
+    public Abiturient () {
         super();
         this. ratings = rand_retings();
+    }
+
+    @Override
+    public void i_am() {
+        System.out.println("I am Abiturient");
     }
 
     public static int[] rand_retings() {
@@ -54,4 +58,6 @@ public class Abiturient extends Human{
         if(this.getSum() == ((5*this.getRatings().length) / 2))
             this.print_abiturient();
     }
+
+
 }

@@ -37,7 +37,6 @@ public class Main {
 
         // methods
         System.out.println(b.getClass().getMethods().length);
-
         try {
 
             //get method

@@ -1,6 +1,5 @@
 package lesson2_dz;
 
-import java.text.ParseException;
 import java.util.Random;
 
 public class Patient extends Human{
@@ -8,13 +7,18 @@ public class Patient extends Human{
     private int num_medcard;
     private String diagnoz;
 
-    public Patient() throws ParseException {
+    public Patient()  {
         super();
         this.num_medcard = rand_medcard();
         this.diagnoz = rand_diagnoz();
     }
 
-        public static int rand_medcard() {
+    @Override
+    public void i_am() {
+        System.out.println("I am Patient");
+    }
+
+    public static int rand_medcard() {
         Random r = new Random();
         int n = r.nextInt(9000) + 1000;
         return n;
