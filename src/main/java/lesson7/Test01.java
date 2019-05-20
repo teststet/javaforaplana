@@ -1,3 +1,5 @@
+package lesson7;
+
 import java.sql.SQLOutput;
 
 import static java.lang.Math.*;
@@ -136,6 +138,7 @@ public class Test01 {
     }
     //Задача 9
     public static void dayWeek (int ch) {
+
         switch (ch) {
             case 1:
                 System.out.println("Понедельник");

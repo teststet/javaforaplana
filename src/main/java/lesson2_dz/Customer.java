@@ -1,5 +1,6 @@
 package lesson2_dz;
 
+import java.text.ParseException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Customer extends Human implements Comparable<Customer>{
@@ -7,7 +8,7 @@ public class Customer extends Human implements Comparable<Customer>{
     private long num_card;
     private long num_bank;
 
-    public Customer() {
+    public Customer()  {
         super();
         this.num_card = rand_card();
         this.num_bank = rand_bank();
@@ -46,7 +47,7 @@ public class Customer extends Human implements Comparable<Customer>{
 
     //Вывод данных
     public void print_customer () {
-        System.out.println(getId() + "\t" + getFamily() + "\t"+ getFirst_name() + "\t" + getSecond_name() + "\t" + getAdress() + "\t" + getNum_card() + "\t" + getNum_bank());
+        System.out.println(getId() + "\t" + getFamily() +  "\t" + getFirst_name() + "\t" + getSecond_name() + "\t" + getAdress() + "\t" + getNum_card() + "\t" + getNum_bank());
     }
 
     //Выводим данные, если они входят в заданный интервал
