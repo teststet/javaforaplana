@@ -1,6 +1,5 @@
 package lesson2_dz;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Random;
@@ -10,22 +9,38 @@ public class Student extends Human{
     private int kurs;
     private String gruppa;
 
-    public Student() throws ParseException {
+    public Student() {
         super();
         this.facultate = rand_fac();
         this.kurs = rand_kur();
         this.gruppa = rand_group();
     }
 
+    @Override
+    public void i_am() {
+        System.out.println("I am Student");
+    }
+
+    private String studentNumberOne(String raiting, int t) {
+        String str;
+
+        if(raiting.equals("NumberOne")) {
+            str = "YES";
+        } else str = "NO";
+
+        System.out.println("Student number " + t);
+        return str;
+    }
+
     public String getFacultate() {
         return facultate;
     }
 
-    public int getKurs() {
-        return kurs;
-    }
+//    public int getKurs() {
+//        return kurs;
+//    }
 
-    public String getGruppa() {
+    private String getGruppa() {
         return gruppa;
     }
 
@@ -42,7 +57,7 @@ public class Student extends Human{
         return n;
     }
 
-    public static String rand_group() {
+    private static String rand_group() {
         Random r = new Random();
         String[] name = {"11-ИВТ-1", "12-Эк", "14-К-2", "14-ФК-3"};
         int n = r.nextInt(4);
@@ -60,13 +75,13 @@ public class Student extends Human{
         System.out.println("Адресс: " + getAdress());
         System.out.println("Телефон: " + getPhone());
         System.out.println("Факультет: " + getFacultate());
-        System.out.println("Курс: " + getKurs());
+        System.out.println("Курс: " + this.kurs);
         System.out.println("Группа: " + getGruppa());
         System.out.println("--------------------------------------------------------------");
     }
     //Вывод на экран студентов заданого Факультетта и курса
     public void print_FakAndKurs(String s, int i) {
-        if ((this.getFacultate().equals(s)) && (this.getKurs() == i))
+        if ((this.getFacultate().equals(s)) && (this.kurs == i))
             print_student();
     }
     //Вывод на экран студентов родифшихся после заданого года

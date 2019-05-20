@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class Human {
+public abstract class  Human {
     {
         idGenertor++;
     }
@@ -19,7 +19,7 @@ public class Human {
     private String adress;
     private int phone;
 
-    public Human () throws ParseException {
+    public Human()  {
         this.family = rand_fam();
         this.first_name = rand_firstName();
         this.second_name = rand_secondName();
@@ -75,13 +75,17 @@ public class Human {
         int n = r.nextInt(9);
         return name[n];
     }
-    public static Date rand_date() throws ParseException {
+    public static Date rand_date()  {
         Random r = new Random();
-        Date date;
+        Date date = null;
         String[] name = {"10.01.1997", "02.12.1998", "15.05.2001", "10.02.1999", "07.11.1995", "27.06.1994", "21.07.1995", "15.09.1997", "18.11.1995"};
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         int n = r.nextInt(9);
-        date = format.parse(name[n]);
+        try {
+            date = format.parse(name[n]);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return date;
     }
     public static String rand_adr() {
@@ -95,5 +99,7 @@ public class Human {
         int n = r.nextInt(100) + 100;
         return n;
     }
+
+    public abstract void i_am ();
 
 }
