@@ -37,13 +37,14 @@ public class dz2_first {
         return res;
     }
     //(0)	Из предложения, содержащего слово «информатика» путем "вырезок" и "склеек" его букв получить слова «форма» и «тик».
-    public static void formaAndTik (String s) {
+    public String  formaAndTik (String s) {
         int n = s.indexOf("информатика");
         String forma = s.substring(n + 2, n + 7);
         String tik = s.substring(n + 7, n + 10);
         System.out.println(s);
         System.out.println(forma);
         System.out.println(tik);
+        return s + "\n" + forma + "\n" + tik;
     }
 
 

@@ -30,4 +30,6 @@ public class MyReader extends  FileWork{
             e.printStackTrace();
         }
     }
+
+    //TODO Добавить метод для считывания нужной строки
 }
