@@ -16,9 +16,9 @@ public class Main {
         String adress = "E:\\test01Java\\src\\main\\java\\lesson7\\";
         String adress2 = "C:\\aplana-test\\javaforaplana\\src\\main\\java\\lesson7\\";
         //Файл для считывания
-        MyReader outputfile = new MyReader(adress2 + "Text.txt");
+        MyReader outputfile = new MyReader(adress + "Text.txt");
         //Файл для записи
-        MyReader inputfile = new MyReader(adress2 + "Text1.txt");
+        MyReader inputfile = new MyReader(adress + "Text1.txt");
 
         //Создаем объекты класса Test01
         Test01 test = new Test01();

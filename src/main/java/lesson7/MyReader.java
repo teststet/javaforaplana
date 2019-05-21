@@ -24,8 +24,9 @@ public class MyReader extends  FileWork{
     @Override
     public void setFileText(String text) {
         try {
-            FileOutputStream fos = new FileOutputStream(filePatch);
+            FileOutputStream fos = new FileOutputStream(filePatch, true);
             fos.write(text.getBytes());
+            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
