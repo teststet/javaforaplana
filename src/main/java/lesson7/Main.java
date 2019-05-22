@@ -16,9 +16,10 @@ public class Main {
         String adress = "E:\\test01Java\\src\\main\\java\\lesson7\\";
         String adress2 = "C:\\aplana-test\\javaforaplana\\src\\main\\java\\lesson7\\";
         //Файл для считывания
-        MyReader outputfile = new MyReader(adress + "Text.txt");
+        MyReader outputfile = new MyReader(adress2 + "Text.txt");
         //Файл для записи
-        MyReader inputfile = new MyReader(adress + "Text1.txt");
+        MyReader inputfile = new MyReader(adress2 + "Text1.txt");
+        MyScanner scanner = new MyScanner(adress2 + "Text.txt");
 
         //Создаем объекты класса Test01
         Test01 test = new Test01();
@@ -28,8 +29,8 @@ public class Main {
         //TODO Добавить все методы
         list.add(String.valueOf(test.sum(5, 6)));
         list.add(String.valueOf(test.firstTask(10,8,15)));
-        list.add(String.valueOf(test.sum(5, 6)));
-        list.add(String.valueOf(test.firstTask(10,8,15)));
+        list.add(test.avg(scanner.getInt(), 3));
+
 
         //Создаем строку, куда добавим все переменые списка
         String s = "";

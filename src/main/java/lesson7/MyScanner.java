@@ -27,6 +27,19 @@ public class MyScanner extends  FileWork {
         return res;
     }
 
+    public int getInt() {
+        int i = 0;
+        try {
+            Scanner sc = new Scanner(new File(filePatch));
+            while(sc.hasNextInt()){
+                i = sc.nextInt();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
+
     @Override
     public void setFileText(String text) {
         System.out.println("Scanner is for reading ONLY!!!!!!");
